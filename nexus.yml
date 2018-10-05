@@ -1,0 +1,7 @@
+version: '2'
+services:
+    nexus:
+        image: sonatype/nexus:latest
+        container_name: nexus
+        ports:
+          -  8091:8081
