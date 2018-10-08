@@ -11,12 +11,12 @@ Check. login as admin/admin123:
 	http://localhost:8091/
 	
 
-#####Create Nexus blob stores : 
+#### Create Nexus blob stores : 
 * docker-public
 * docker-private
 * docker-group
 
-#####Create Docker repositories
+#### Create Docker repositories
 Following https://help.sonatype.com/repomanager3/private-registry-for-docker/proxy-repository-for-docker create Proxy docker-hub repository with values:
 * name: docker-proxy
 * URL: http://localhost:8091/repository/docker-proxy/
@@ -37,7 +37,7 @@ Following https://help.sonatype.com/repomanager3/private-registry-for-docker/rep
 * Enable docker V1 API
 * groups: docker-proxy, docker-private
 
-#####Setting up docker client to use both proxy and private registries
+#### Setting up docker client to use both proxy and private registries
 
 > Running nexus as a container on the same docker engine you want to create the private registry for is **wrong**. To try it out anyway: set the unsecure registries to the inner docker network IP.
 
@@ -47,7 +47,7 @@ Following https://help.sonatype.com/repomanager3/private-registry-for-docker/rep
 
 2. Add NEXUS_IP:8094 and NEXUS_IP:8093 to unsecure registries following docker-engine documentation.
 
-#####Pull a dockerhub image
+#### Pull a dockerhub image
 
 1. Login to the public group registry
 
@@ -57,7 +57,7 @@ Following https://help.sonatype.com/repomanager3/private-registry-for-docker/rep
 
     docker pull NEXUS_CONTAINER_IP:8094/apache/nifi:latest
     
-#####Push an image to private registry
+#### Push an image to private registry
 
 1. Login to the private registry
 
