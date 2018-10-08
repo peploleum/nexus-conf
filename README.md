@@ -41,11 +41,14 @@ Following https://help.sonatype.com/repomanager3/private-registry-for-docker/rep
 
 > Running nexus as a container on the same docker engine you want to create the private registry for is **wrong**. To try it out anyway: set the unsecure registries to the inner docker network IP.
 
-1. Get the nexus container inner docker network IP: 
+1. Get the nexus container inner docker network IP
+
 
     docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' NEXUS_CONTAINER_ID
+    
 
-2. Add NEXUS_IP:8094 and NEXUS_IP:8093 to unsecure registries following docker-engine documentation.
+2. Add NEXUS_IP:8094 and NEXUS_IP:8093 to unsecure registries following docker-engine documentation
+
 
 #### Pull a dockerhub image
 
@@ -53,6 +56,7 @@ Following https://help.sonatype.com/repomanager3/private-registry-for-docker/rep
 
 
     docker login -u admin -p admin123 NEXUS_CONTAINER_IP:8094
+    
     
 2. Pull (and cache to proxy) a public image
 
@@ -66,12 +70,15 @@ Following https://help.sonatype.com/repomanager3/private-registry-for-docker/rep
 
     docker tag IMAGE_ID:VERSION NEXUS_CONTAINER_IP:8093/IMAGE_ID:VERSION
     
+    
 2. Tag image
 
     
     docker login -u admin -p admin123 NEXUS_CONTAINER_IP:8093
     
+    
 2. Push image to private registry
 
 
     docker push NEXUS_CONTAINER_IP:8093/IMAGE_ID:VERSION
+    
