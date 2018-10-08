@@ -51,9 +51,11 @@ Following https://help.sonatype.com/repomanager3/private-registry-for-docker/rep
 
 1. Login to the public group registry
 
+
     docker login -u admin -p admin123 NEXUS_CONTAINER_IP:8094
     
 2. Pull (and cache to proxy) a public image
+
 
     docker pull NEXUS_CONTAINER_IP:8094/apache/nifi:latest
     
@@ -61,17 +63,15 @@ Following https://help.sonatype.com/repomanager3/private-registry-for-docker/rep
 
 1. Login to the private registry
 
+
     docker tag IMAGE_ID:VERSION NEXUS_CONTAINER_IP:8093/IMAGE_ID:VERSION
     
 2. Tag image
+
     
     docker login -u admin -p admin123 NEXUS_CONTAINER_IP:8093
     
 2. Push image to private registry
 
+
     docker push NEXUS_CONTAINER_IP:8093/IMAGE_ID:VERSION
-    
-
-    
- 
-
