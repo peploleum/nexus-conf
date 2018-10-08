@@ -52,32 +52,32 @@ Following https://help.sonatype.com/repomanager3/private-registry-for-docker/rep
 
 ## Pull a dockerhub image
 
-### Login to the public group registry
+Login to the public group registry
 
 
     docker login -u admin -p admin123 NEXUS_CONTAINER_IP:8094
     
     
-### Pull (and cache to proxy) a public image
+Pull (and cache to proxy) a public image
 
 
     docker pull NEXUS_CONTAINER_IP:8094/apache/nifi:latest
     
 ## Push an image to private registry
 
-### Login to the private registry
+Login to the private registry
 
 
     docker tag IMAGE_ID:VERSION NEXUS_CONTAINER_IP:8093/IMAGE_ID:VERSION
     
     
-### Tag image
+Tag image
 
     
     docker login -u admin -p admin123 NEXUS_CONTAINER_IP:8093
     
     
-### Push image to private registry
+Push image to private registry
 
 
     docker push NEXUS_CONTAINER_IP:8093/IMAGE_ID:VERSION
